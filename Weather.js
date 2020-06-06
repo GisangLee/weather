@@ -68,21 +68,23 @@ const weatherOptions = {
 export default function Weather({ temp, conditions }) {
   return (
     <LinearGradient
-      colors={weatherOptions["Dust"].gradient}
+      colors={weatherOptions[conditions].gradient}
       style={styles.container}
     >
       <StatusBar barStyle="light-content" />
       <View style={styles.halfContainer}>
         <MaterialCommunityIcons
           size={96}
-          name={weatherOptions["Dust"].iconName}
+          name={weatherOptions[conditions].iconName}
           color="white"
         />
         <Text style={styles.temp}>{temp}°</Text>
       </View>
       <View style={{ ...styles.halfContainer, ...styles.textContainer }}>
-        <Text style={styles.title}>{weatherOptions["Dust"].title}</Text>
-        <Text style={styles.subtitle}>{weatherOptions["Dust"].subtitle}</Text>
+        <Text style={styles.title}>{weatherOptions[conditions].title}</Text>
+        <Text style={styles.subtitle}>
+          {weatherOptions[conditions].subtitle}
+        </Text>
       </View>
     </LinearGradient>
   );
