@@ -38,8 +38,6 @@ const weatherOptions = {
   Atmosphere: {
     iconName: "weather-hail",
     gradient: ["#89F7FE", "#66A6FF"],
-    iconName: "weather-hail",
-    gradient: ["#89F7FE", "#66A6FF"],
   },
   Clouds: {
     iconName: "weather-cloudy",
@@ -70,23 +68,21 @@ const weatherOptions = {
 export default function Weather({ temp, conditions }) {
   return (
     <LinearGradient
-      colors={weatherOptions[conditions].gradient}
+      colors={weatherOptions["Dust"].gradient}
       style={styles.container}
     >
       <StatusBar barStyle="light-content" />
       <View style={styles.halfContainer}>
         <MaterialCommunityIcons
           size={96}
-          name={weatherOptions[conditions].iconName}
+          name={weatherOptions["Dust"].iconName}
           color="white"
         />
         <Text style={styles.temp}>{temp}°</Text>
       </View>
       <View style={{ ...styles.halfContainer, ...styles.textContainer }}>
-        <Text style={styles.title}>{weatherOptions[conditions].title}</Text>
-        <Text style={styles.subtitle}>
-          {weatherOptions[conditions].subtitle}
-        </Text>
+        <Text style={styles.title}>{weatherOptions["Dust"].title}</Text>
+        <Text style={styles.subtitle}>{weatherOptions["Dust"].subtitle}</Text>
       </View>
     </LinearGradient>
   );
